@@ -71,7 +71,7 @@
     }
 
 
-    .professional_section .img-box {
+    .professional_section .img-box, #contImg{
         display: none;
     }
 

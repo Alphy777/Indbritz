@@ -24,7 +24,8 @@
   <!-- Custom styles -->
   <link href="css/style.css" rel="stylesheet" />
   <!-- Owl Carousel -->
-  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+  <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css" type="text/css">
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
@@ -380,31 +381,52 @@
       </div>
       <div class="row">
         <div class="col-md-6">
-          <form action="">
+          <form id="form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="635b50ba-480f-4be6-bcb1-197a0766f19c">
             <div>
-              <input type="text" placeholder="Name" />
+              <input type="text" name="Name" placeholder="Name" />
             </div>
             <div>
-              <input type="text" placeholder="Phone Number" />
+              <input id="mobile" type="text" name="Phone Number" placeholder="Phone Number" />
             </div>
             <div>
-              <input type="email" placeholder="Email" />
+              <input id="email" type="email" name="Mail ID" placeholder="Email" />
             </div>
             <div>
-              <input type="text" class="message-box" placeholder="Message" />
+              <input type="text" class="message-box" name="Message" placeholder="Message" />
             </div>
+            <div id="result"></div>
+            <!-- hCaptcha Spam Protection -->
+            <div class="h-captcha" data-captcha="true"></div>
             <div class="d-flex ">
-              <button>
-                SEND
+              <button id="submit" type="submit">
+                <div class="svg-wrapper-1">
+                  <div class="svg-wrapper">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      height="24"
+                    >
+                      <path fill="none" d="M0 0h24v24H0z"></path>
+                      <path
+                        fill="currentColor"
+                        d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+                <span>Send</span>
               </button>
             </div>
           </form>
         </div>
         <div class="col-md-6">
           <div class="map_container">
-            <div class="map">
+            <img id="contImg" src="images/contactus.svg" alt="">
+            <!-- <div class="map">
               <div id="googleMap" style="width:100%;height:100%;"></div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -414,8 +436,8 @@
   <!-- end contact section -->
 
 
-  <!-- info section -->
- <section class="info_section ">
+<!-- info section -->
+<section class="info_section ">
   <div class="container">
     <h4>
       Get In Touch
@@ -425,19 +447,19 @@
         <div class="info_items">
           <div class="row d-flex justify-content-center">
             <div class="col-md-4">
-              <a href="">
+              <a href="tel:+61402374021">
                 <div class="item ">
                   <div class="img-box ">
                     <i class="fa fa-phone" aria-hidden="true"></i>
                   </div>
                   <p>
-                    +91 9540271636
+                    +61 402374021
                   </p>
                 </div>
               </a>
             </div>
             <div class="col-md-4">
-              <a href="">
+              <a href="mailto:admin@indbritzconsultancy.com">
                 <div class="item ">
                   <div class="img-box">
                     <i class="fa fa-envelope" aria-hidden="true"></i>
@@ -458,20 +480,18 @@
       Follow Us
     </h4>
     <div class="box">
-      <a href="">
+      <a href="https://www.facebook.com/profile.php?id=61550200751011">
         <i class="fa fa-facebook" aria-hidden="true"></i>
       </a>
-      <a href="">
-        <i class="fa fa-linkedin" aria-hidden="true"></i>
+      <a href="https://wa.me/9540271636">
+        <i class="fa fa-whatsapp" aria-hidden="true"></i>
       </a>
-      <a href="">
+      <a href="https://www.instagram.com/indbritz?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
         <i class="fa fa-instagram" aria-hidden="true"></i>
       </a>
     </div>
   </div>
 </section>
-
-
 
 <!-- end info_section -->
 
@@ -491,9 +511,11 @@
 <script src="jquery.min.js"></script>
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/custom.js"></script>
+<!-- Required for hCaptcha -->
+<script src="https://web3forms.com/client/script.js" async defer></script>
 
 <!-- Google Map -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script> -->
 <!-- End Google Map -->
 
 
