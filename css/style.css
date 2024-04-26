@@ -304,7 +304,7 @@ a:focus {
 }
 
 .slider_section .detail-box {
-  padding-bottom: 90px;
+  padding-bottom: 1.5em;
 }
 
 .slider_section .detail-box h1 {
@@ -316,6 +316,12 @@ a:focus {
 .slider_section .detail-box p {
   color: #444;
   font-size: 15px;
+}
+.detail-box{
+  line-height: 1.57;
+}
+.detail-box span{
+  font-weight: bold;
 }
 
 .slider_section .detail-box a {
@@ -336,7 +342,7 @@ a:focus {
 }
 
 .slider_section .img-box img {
-  width: 100%;
+  width: 80%;
 }
 .about_section .row {
   -webkit-box-align: center;
