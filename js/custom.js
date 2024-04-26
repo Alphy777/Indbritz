@@ -1,3 +1,5 @@
+AOS.init(); //For Animation
+
 // Get Current Year
 function getCurrentYear() {
     var d = new Date();
