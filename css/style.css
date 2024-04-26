@@ -380,6 +380,21 @@ a:focus {
   width: 100%;
 }
 
+/* counter section */
+.section-work-count{
+
+  padding: 5.5rem 0;
+  
+}
+.grid-column{
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-evenly;
+}
+.count{
+  text-align: center;
+  text-transform: capitalize;
+}
 .professional_section {
   background-color: #d1e3ff;
 }
@@ -423,6 +438,7 @@ a:focus {
 
 .service_section {
   position: relative;
+  background-color: #d1e3ff;
 }
 
 .service_section .box {
