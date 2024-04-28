@@ -37,6 +37,9 @@
 }
 
 @media (max-width: 767px) {
+    #abt-img-box{
+        display: block;
+    }
     .layout_padding {
         padding-top: 90px;
         padding-bottom: 90px;

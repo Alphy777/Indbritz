@@ -350,6 +350,10 @@ a:focus {
           align-items: center;
 }
 
+#abt-img-box{
+  display: none;
+}
+
 .about_section .detail-box h2 {
   text-transform: uppercase;
   font-weight: bold;
@@ -357,6 +361,7 @@ a:focus {
 
 .about_section .detail-box p {
   margin-top: 10px;
+  text-align: justify;
 }
 
 .about_section .detail-box a {
