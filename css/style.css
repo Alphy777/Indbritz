@@ -436,11 +436,14 @@ a:focus {
   color: #ff8a1d;
 }
 
-.service_section {
+.secvice_section_index_bg {
   position: relative;
   background-color: #d1e3ff;
 }
 
+#card-container{
+  background: linear-gradient(180deg, white, white, #d1e3ff88);
+}
 .service_section .box {
   margin-top: 30px;
   text-align: center;
