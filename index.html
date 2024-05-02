@@ -30,6 +30,8 @@
   <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css" type="text/css">
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
+  <!-- ajax jquery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
 </head>
 
@@ -418,32 +420,25 @@
 
   <!-- contact section -->
 
-  <section class="contact_section layout_padding">
+  <section class="contact_section layout_padding"  data-aos="fade-up" data-aos-duration="1000">
     <div class="container">
-      <div class="heading_container"  data-aos="fade-up" data-aos-duration="1000">
+      <div class="heading_container">
         <h2>
           Contact Us
         </h2>
       </div>
       <div class="row">
         <div class="col-md-6"  data-aos="fade-up" data-aos-duration="1000">
-          <form id="form" action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="635b50ba-480f-4be6-bcb1-197a0766f19c">
-            <div>
-              <input type="text" name="Name" placeholder="Name" />
-            </div>
-            <div>
-              <input id="mobile" type="text" name="Phone Number" placeholder="Phone Number" />
-            </div>
-            <div>
-              <input id="email" type="email" name="Mail ID" placeholder="Email" />
-            </div>
-            <div>
-              <input type="text" class="message-box" name="Message" placeholder="Message" />
-            </div>
-            <div id="result"></div>
-            <!-- hCaptcha Spam Protection -->
-            <div class="h-captcha" data-captcha="true"></div>
+          <form id="form" method="post">
+              
+            <input type="text" name="Name" placeholder="Name" />
+
+            <input id="mobile" type="text" name="MobileNumber" placeholder="Phone Number(With Country Code)" />
+              
+            <input id="email" type="email" name="MailId" placeholder="Email" />
+            
+            <input type="text" class="message-box" name="Message" placeholder="Message" />
+
             <div class="d-flex ">
               <button id="submit" type="submit">
                 <div class="svg-wrapper-1">
@@ -554,15 +549,15 @@
 </footer>
 <!-- footer section -->
 
-<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="https://kit.fontawesome.com/6d286a1171.js" crossorigin="anonymous"></script>
 <script src="jquery.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/custom.js"></script>
-<!-- Required for hCaptcha -->
-<script src="https://web3forms.com/client/script.js" async defer></script>
+<script src="js/contact.js"></script>
 
 <!-- Google Map -->
 <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script> -->
