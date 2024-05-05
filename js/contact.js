@@ -1,43 +1,55 @@
-// Form validation with jQuery Validate plugin
-$("#form").validate({ // Change to your form's ID if different
-    rules: {
-      Name: {
-        required: true
-      },
-      MailId: {
-        required: true,
-        email: true,
-      },
-      MobileNumber:{
-        required: true
-      },
-      Message: {
-        required: true
-      }
-    },
-    messages: {
-    },
-  });
+$.validator.addMethod("phoneNumber", function(value, element) {
+  return this.optional(element) || /^(\+\d{1,4})?\s?\d{10}$/.test(value);
+}, "Please enter a valid phone number");
 
-// For sending the data from the website
-$("#form").submit(function(e){
-    e.preventDefault();
-    
-    // Check if the form is valid
-    if($("#form").valid()){ 
-      alert("Submitting, please wait!");
-      $.ajax({
-        url:"https://script.google.com/macros/s/AKfycbw_DU2rGVrVN9gETO23cxXdVzLB0IotJxWq01YOWTu7G7zx6q3KmfGoLkhEwbtq_bUftw/exec",
-         data:$("#form").serialize(),
-        method:"post",
-        success:function (response){
-            alert("Submitted successfully")
-          window.location.reload();
-        },
-        error:function (err){
-          alert("Something Error")
-        }
-      });
+$("#form").validate({
+  rules: {
+    Name: {
+      required: true
+    },
+    MailId: {
+      required: true,
+      email: true
+    },
+    MobileNumber:{
+      required: true,
+      phoneNumber: true
+    },
+    Message: {
+      required: true
     }
-  });
-    
+  },
+  submitHandler: function(form) {
+    var recaptcha = grecaptcha.getResponse();
+    if (recaptcha.length == 0) {
+      document.getElementById("captcha").style.display = "block";
+      return false;
+    } 
+    else {
+    $("#loading-overlay").removeClass("d-none");
+
+    $.ajax({
+      url: "https://script.google.com/macros/s/AKfycbwNNaHCPyWrDhr6H6XVa-JopjXmAVjYQDae0yysxCSKFjCwm7HErb2pdL8li4mEdYUH/exec",
+      data: $(form).serialize(),
+      method: "post",
+      success: function(response) {
+        $("#loading-overlay").addClass("d-none");
+        $("#alert-popup").text("Submitted Successfully!").removeClass("alert-danger").addClass("alert-success");
+        $("#alert-popup").removeClass("d-none");
+        setTimeout(function() {
+          $("#alert-popup").addClass("d-none");
+          location.reload();
+        }, 2000);
+      },
+      error: function(err) {
+        $("#loading-overlay").addClass("d-none");
+        $("#alert-popup").text("Error submitting form").removeClass("alert-success").addClass("alert-danger");
+        $("#alert-popup").removeClass("d-none");
+        setTimeout(function() {
+          $("#alert-popup").addClass("d-none");
+        }, 2000);
+      }
+    });
+  }
+}
+});
