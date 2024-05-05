@@ -664,7 +664,7 @@ a:focus {
   height: 135px;
 }
 
-.contact_section button {
+.contact_section button{
   border: none;
   display: inline-block;
   font-family: 'Merriweather Sans', sans-serif;
@@ -675,6 +675,28 @@ a:focus {
   border-radius: 0;
   color: #ffffff;
   margin-top: 15px;
+}
+#btn-view{
+  border: none;
+  font-family: 'Merriweather Sans', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #0355cc;
+  border: 1px solid #0355cc;
+  width: 15rem;
+  color: white;
+  padding: 10px 55px;
+  margin: 0 auto;
+}
+#btn-view a{
+  color: white;
+}
+#btn-view a:hover {
+  color: #0355cc;
+}
+#btn-view:hover {
+  background-color: transparent;
+  color: #0355cc;
 }
 
 .contact_section button:hover {
