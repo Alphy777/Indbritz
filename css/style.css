@@ -909,6 +909,12 @@ a:focus {
 }
 label{
   color: red;
+  top: -1.378em;
+  position: relative;
+}
+#captcha{
+  color: red;
+  position: static;
 }
 
 /* heart beat */
