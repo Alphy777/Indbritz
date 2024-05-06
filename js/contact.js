@@ -36,7 +36,7 @@ $("#form").validate({
       };
 
       $.ajax({
-        url: "https://script.google.com/macros/s/AKfycbwNNaHCPyWrDhr6H6XVa-JopjXmAVjYQDae0yysxCSKFjCwm7HErb2pdL8li4mEdYUH/exec",
+        url: "https://script.google.com/macros/s/AKfycbyKWnUL18WVRg5f1PQp-iu3uNpsIH8PAMU2gMCBa46Hv471rrA1cC8RG0XxD5X8XCbnLA/exec",
         data: formData,
         method: "post",
         success: function(response) {
